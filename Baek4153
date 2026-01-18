@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        for(int i=0; i<=30000; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();      
+
+            if(a==0 && b==0 && c==0){
+                break;
+            }else if(a*a + b*b == c*c ||a*a + c*c == b*b ||b*b + c*c == a*a){
+                System.out.println("right");
+            } else {
+                System.out.println("wrong");
+            }
+        }          
+    }
+}
+
+/*직각 삼각형이 맞는지 판단하는 간단한 문제
+  피타고라스 정의 a^2 + b^2 = c^2라면 직각삼각형 -> 이 조건에 맞으면 right 아니라면 wrong을 출력
+  주의. a,b,c의 입력 값 중 c가 항상 빗변이라는 규정이 없기 때문에 3가지 모두 빗변이 될 수 있다라는 가정으로 조건문 작성*/
